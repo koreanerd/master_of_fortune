@@ -1,3 +1,11 @@
+import WebtoonLayout from "@/components/WebtoonLayout";
+import Cut from "@/components/Cut";
+
 export default function Home() {
-  return <div className="">나의 사주팔자</div>;
+  return (
+    <WebtoonLayout>
+      <Cut />
+      <Cut />
+    </WebtoonLayout>
+  );
 }
