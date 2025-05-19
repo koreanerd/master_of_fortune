@@ -6,6 +6,7 @@ export const cutData: CutData[] = [
       src: "/webtoon/episode/cut_1.svg",
       width: 375,
       height: 752,
+      isPriority: true,
     },
     speechBubbleData: {
       src: "/webtoon/episode/speech_bubble_cut_1_1.svg",
@@ -16,6 +17,15 @@ export const cutData: CutData[] = [
       x: 24,
       y: 0,
       marginTop: 20,
+    },
+    headerData: {
+      src: "/webtoon/episode/divider.svg",
+      title: "제 1장",
+      subtitle: "나의 사주팔자",
+      width: 157,
+      height: 20,
+      x: 109,
+      y: 584,
     },
   },
   {

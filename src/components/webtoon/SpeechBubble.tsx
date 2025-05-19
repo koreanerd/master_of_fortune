@@ -1,4 +1,6 @@
+import userStore from "@/stores/userStore";
 import { SpeechBubbleData } from "@/types/cut";
+import { replaceNamePlaceholder } from "@/utils/fortune";
 
 export default function SpeechBubble({ data }: { data: SpeechBubbleData }) {
   return (
@@ -22,7 +24,10 @@ export default function SpeechBubble({ data }: { data: SpeechBubbleData }) {
           marginBottom: data.marginBottom ? `${data.marginBottom}px` : 0,
         }}
       >
-        {data.text}
+        {replaceNamePlaceholder(
+          data.text,
+          userStore.userFortuneData?.name ?? "000"
+        )}
       </p>
     </div>
   );

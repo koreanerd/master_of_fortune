@@ -15,6 +15,10 @@ export default function EffectText({ data }: { data: EffectTextData }) {
         alt="effect-text"
         width={data.width}
         height={data.height}
+        style={{
+          width: "auto",
+          height: "auto",
+        }}
       />
     </div>
   );

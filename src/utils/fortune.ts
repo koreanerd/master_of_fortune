@@ -11,3 +11,9 @@ export function elementalColor(value: string) {
 
   return ELEMENTAL_COLOR[element];
 }
+
+export function replaceNamePlaceholder(text: string, fullName: string): string {
+  const nameOnly = fullName.length > 1 ? fullName.slice(1) : fullName;
+
+  return text.replace(/00/g, nameOnly);
+}

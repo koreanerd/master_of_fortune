@@ -20,8 +20,19 @@ export type EffectTextData = {
   y: number;
 };
 
+export type HeaderData = {
+  src: string;
+  width: number;
+  height: number;
+  x: number;
+  y: number;
+  title: string;
+  subtitle: string;
+};
+
 export type CutData = {
   imageData: ImageData;
   speechBubbleData?: SpeechBubbleData;
   effectTextData?: EffectTextData;
+  headerData?: HeaderData;
 };
