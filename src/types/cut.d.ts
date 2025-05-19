@@ -1,3 +1,5 @@
+import { ImageData } from "./public";
+
 export type SpeechBubbleData = {
   src: string;
   width: number;
@@ -8,12 +10,6 @@ export type SpeechBubbleData = {
   y: number;
   marginTop?: number;
   marginBottom?: number;
-};
-
-export type ImageData = {
-  src: string;
-  width: number;
-  height: number;
 };
 
 export type EffectTextData = {
