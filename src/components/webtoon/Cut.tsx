@@ -9,7 +9,7 @@ export default function Cut({
   effectTextData,
 }: CutData) {
   return (
-    <div className="relative w-[375px] h-ful bg-[#f2f3ef]">
+    <div className="relative w-[375px] h-full bg-[#f2f3ef]">
       <Image
         src={imageData.src}
         alt="cut"

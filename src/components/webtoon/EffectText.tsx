@@ -1,5 +1,6 @@
-import { EffectTextData } from "@/types/cut";
 import Image from "next/image";
+import { EffectTextData } from "@/types/cut";
+
 export default function EffectText({ data }: { data: EffectTextData }) {
   return (
     <div
