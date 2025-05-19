@@ -10,7 +10,11 @@ import { observer } from "mobx-react-lite";
 function Webtoon() {
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("http://localhost:3000/api/mock");
+      const res = await fetch(
+        `${
+          process.env.NEXT_API_URL || process.env.NEXT_PUBLIC_API_URL
+        }/api/mock`
+      );
       const userFortuneData = await res.json();
 
       userStore.setUserFortuneData(userFortuneData);
