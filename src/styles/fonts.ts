@@ -18,12 +18,19 @@ export const gyeonggiBatang = localFont({
 export const gapyeongHanseokbong = localFont({
   src: [
     {
+      path: "../../public/fonts/GapyeongHanseokbongL.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
       path: "../../public/fonts/GapyeongHanseokbongR.otf",
       weight: "400",
+      style: "normal",
     },
     {
       path: "../../public/fonts/GapyeongHanseokbongB.otf",
       weight: "700",
+      style: "normal",
     },
   ],
 });

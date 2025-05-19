@@ -1,11 +1,13 @@
-import WebtoonLayout from "@/components/WebtoonLayout";
-import Cut from "@/components/Cut";
+import { cutData } from "@/data/cut";
+import WebtoonLayout from "@/components/webtoon/WebtoonLayout";
+import Cut from "@/components/webtoon/Cut";
 
 export default function Home() {
   return (
     <WebtoonLayout>
-      <Cut />
-      <Cut />
+      {cutData.map((cut, idx) => (
+        <Cut key={idx} {...cut} />
+      ))}
     </WebtoonLayout>
   );
 }
