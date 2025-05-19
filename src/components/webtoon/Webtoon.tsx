@@ -10,14 +10,21 @@ import { observer } from "mobx-react-lite";
 function Webtoon() {
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch(
-        `${
-          process.env.NEXT_API_URL || process.env.NEXT_PUBLIC_API_URL
-        }/api/mock`
-      );
-      const userFortuneData = await res.json();
+      try {
+        const res = await fetch("/api/mock");
 
-      userStore.setUserFortuneData(userFortuneData);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        const userFortuneData = await res.json();
+
+        userStore.setUserFortuneData(userFortuneData);
+      } catch (error) {
+        console.error("데이터를 불러오는 중 오류가 발생했습니다:", error);
+
+        userStore.setError(true);
+      }
     }
 
     fetchData();
@@ -34,6 +41,10 @@ function Webtoon() {
       {userStore.isLoading ? (
         <div className="absolute bottom-[350px] text-sm text-[#424242]">
           사주 정보를 불러오는 중...
+        </div>
+      ) : userStore.hasError ? (
+        <div className="absolute bottom-[350px] text-sm text-red-500">
+          사주 정보를 불러오는데 실패했습니다. 잠시 후 다시 시도해주세요.
         </div>
       ) : (
         <FortuneTableLayout />

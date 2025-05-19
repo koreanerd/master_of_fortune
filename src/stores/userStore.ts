@@ -4,6 +4,7 @@ import { makeAutoObservable } from "mobx";
 class UserStore {
   userFortuneData: UserFortuneData | null = null;
   isLoading: boolean = true;
+  hasError: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -11,6 +12,12 @@ class UserStore {
 
   setUserFortuneData(userFortuneData: UserFortuneData) {
     this.userFortuneData = userFortuneData;
+    this.isLoading = false;
+    this.hasError = false;
+  }
+
+  setError(error: boolean) {
+    this.hasError = error;
     this.isLoading = false;
   }
 }
