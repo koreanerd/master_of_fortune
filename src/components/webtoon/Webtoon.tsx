@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { observer } from "mobx-react-lite";
 import userStore from "@/stores/userStore";
 import { cutData } from "@/data/cut";
 import Cut from "./Cut";
 import FortuneTableLayout from "../fortune_table/FortuneTableLayout";
-import { observer } from "mobx-react-lite";
 
 function Webtoon() {
   useEffect(() => {
@@ -31,9 +31,7 @@ function Webtoon() {
   }, []);
 
   return (
-    <div
-      className={`relative flex flex-col items-center w-full max-w-md mx-auto px-4 border-1 border-red-500`}
-    >
+    <div className="relative flex flex-col items-center w-full max-w-md mx-auto px-4 border-1">
       {cutData.map((cut, idx) => (
         <Cut key={idx} {...cut} />
       ))}

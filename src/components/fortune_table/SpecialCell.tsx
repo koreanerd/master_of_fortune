@@ -9,11 +9,10 @@ export default function SpecialCell({
 }) {
   return (
     <td
-      className={`${
-        isLast
-          ? "border-r-[1.5px] border-black"
-          : "border-r-[0.5px] border-[#8a8a8a]"
-      } bg-[#fdfdfb]`}
+      style={{
+        borderRight: isLast ? "1.5px solid #000" : "0.5px solid #8a8a8a",
+        backgroundColor: "#fdfdfb",
+      }}
     >
       <div className="py-[5px] flex items-center justify-center">
         <div

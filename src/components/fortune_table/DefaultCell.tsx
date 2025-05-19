@@ -9,11 +9,10 @@ export default function DefaultCell({
 }) {
   return (
     <td
-      className={`${
-        isLast
-          ? "border-r-[1.5px] border-black"
-          : "border-r-[0.5px] border-[#8a8a8a]"
-      } bg-[#fdfdfb]`}
+      style={{
+        borderRight: isLast ? "1.5px solid #000" : "0.5px solid #8a8a8a",
+        backgroundColor: "#fdfdfb",
+      }}
     >
       <div className="flex flex-col items-center justify-center py-[5px]">
         {Array.isArray(value) ? (

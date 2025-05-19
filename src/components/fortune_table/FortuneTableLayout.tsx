@@ -1,6 +1,6 @@
 import UserInfo from "./UserInfo";
-import FortuneTable from "./FortuneTable";
 import userStore from "@/stores/userStore";
+import FortuneTable from "./FortuneTable";
 
 export default function FortuneTableLayout() {
   const userFortuneData = userStore.userFortuneData;
