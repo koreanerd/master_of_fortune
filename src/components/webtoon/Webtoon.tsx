@@ -5,7 +5,7 @@ import { observer } from "mobx-react-lite";
 import userStore from "@/stores/userStore";
 import { cutData } from "@/data/cut";
 import Cut from "./Cut";
-import FortuneTableLayout from "../fortune_table/FortuneTableLayout";
+import FortuneTable from "../fortune_table/FortuneTable";
 
 function Webtoon() {
   useEffect(() => {
@@ -31,7 +31,7 @@ function Webtoon() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-md mx-auto px-4 border-1">
+    <div className="relative flex flex-col items-center w-full max-w-md mx-auto px-4">
       {cutData.map((cut, idx) => (
         <Cut key={idx} {...cut} />
       ))}
@@ -45,7 +45,7 @@ function Webtoon() {
           사주 정보를 불러오는데 실패했습니다. 잠시 후 다시 시도해주세요.
         </div>
       ) : (
-        <FortuneTableLayout />
+        <FortuneTable />
       )}
     </div>
   );

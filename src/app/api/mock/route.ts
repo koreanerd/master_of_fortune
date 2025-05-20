@@ -1,9 +1,9 @@
 const mockData = {
-  name: "해방촌",
+  name: "김봉곤",
   birthInfo: {
-    year: 1945,
-    month: 6,
-    day: 5,
+    year: 1980,
+    month: 12,
+    day: 25,
     time: "04:00",
   },
   rows: [
