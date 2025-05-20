@@ -253,6 +253,76 @@ export const cutData: CutData[] = [
 
 ```
 
+#### 사주 풀이표 기능 핵심 컴포넌트
+
+```javascript
+import { RowData } from "@/types/fortune_table";
+import { TABLE_HEADER } from "@/constants/fortune";
+import LabelCell from "./LabelCell";
+import SpecialCell from "./SpecialCell";
+import DefaultCell from "./DefaultCell";
+
+export default function Table({ rowData }: { rowData: RowData[] }) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <div>구분</div>
+          </th>
+          {TABLE_HEADER.map((header, idx) => {
+            // 테이블 헤더 설정
+            const isLast = TABLE_HEADER.length - 1 === idx;
+
+            return (
+              <th
+                className={`py-[15px] w-[65px] border-r ${
+                  isLast ? "border-r-[1.5px] border-black" : "border-[#8a8a8a]"
+                } leading-tight text-[20px]`}
+                key={idx}
+              >
+                {header}
+              </th>
+            );
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        {rowData.map(
+          (
+            row,
+            idx // 테이블 보디 설정: 천간&지지, 레이블, 기본 형태로 컴포넌트화 하여 렌더링
+          ) => (
+            <tr
+              key={idx}
+              style={{
+                borderTop: row.label === "천간" ? "1.5px solid #000" : "none",
+                borderBottom:
+                  row.label === "천간"
+                    ? "1px solid #8a8a8a"
+                    : "1.5px solid #000",
+              }}
+            >
+              <LabelCell label={row.label} />
+              {row.values.map((value, idx) => {
+                const isLast = row.values.length - 1 === idx;
+
+                return row.label.replace(" (지지)", "") === "지지" ||
+                  row.label.replace(" (지지)", "") === "천간" ? (
+                  <SpecialCell key={idx} value={value} isLast={isLast} />
+                ) : (
+                  <DefaultCell key={idx} value={value} isLast={isLast} />
+                );
+              })}
+            </tr>
+          )
+        )}
+      </tbody>
+    </table>
+  );
+}
+```
+
 ---
 
 ### 4. 중앙 상태 관리
@@ -288,9 +358,7 @@ export default observer(Webtoon);
 ### 5. 디자인 에셋 활용방식
 
 > 피그마의 디자인 에셋은 다음과 같이 분리하여 사용하였습니다. 주로 착안한 점은 실제 웹툰에서 반응형 요소가 들어가면 어떨까 라고 생각하며 진행 하였습니다. 예를들어 말풍선이나 효과음 텍스트와 같은 요소들을 별도로 분리한다면 좀더 생동감있는 서비스를 제공할 수 있기 때문입니다.
-<img width="2032" alt="Screenshot 2025-05-20 at 12 48 08 pm" src="https://github.com/user-attachments/assets/3ed90659-49e0-4331-adec-46ff0f0ce67d" />
-
-
+> <img width="2032" alt="Screenshot 2025-05-20 at 12 48 08 pm" src="https://github.com/user-attachments/assets/3ed90659-49e0-4331-adec-46ff0f0ce67d" />
 
 ## 프로젝트 회고
 
