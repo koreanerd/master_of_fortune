@@ -10,7 +10,7 @@ export default function SpecialCell({
   return (
     <td
       style={{
-        borderRight: isLast ? "1.5px solid #000" : "0.5px solid #8a8a8a",
+        borderRight: isLast ? "1.5px solid #000" : "1px solid #8a8a8a",
         backgroundColor: "#fdfdfb",
       }}
     >
