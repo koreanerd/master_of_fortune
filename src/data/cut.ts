@@ -55,7 +55,7 @@ export const cutData: CutData[] = [
       text: "제가 00님의 사주를\n보기 쉽게 표로 정리했어요",
       fontSize: 16,
       x: 24,
-      y: 950,
+      y: 1100,
       marginBottom: 20,
     },
   },
