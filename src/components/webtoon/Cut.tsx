@@ -11,7 +11,7 @@ export default function Cut({
   headerData,
 }: CutData) {
   return (
-    <div className="relative w-full h-full bg-[#f2f3ef] border-1 border-blue-400">
+    <div className="relative w-full h-full bg-[#f2f3ef]">
       {headerData && (
         <div className="absolute mt-[80px] left-1/2 transform -translate-x-1/2">
           <EpisodeHeader data={headerData} />

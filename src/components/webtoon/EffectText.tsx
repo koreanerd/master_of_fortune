@@ -6,8 +6,10 @@ export default function EffectText({ data }: { data: EffectTextData }) {
     <div
       className="absolute z-20"
       style={{
-        left: `${data.x}px`,
-        bottom: `${data.y}px`,
+        left: data.leftX !== undefined ? `${data.leftX}px` : "auto",
+        right: data.rightX !== undefined ? `${data.rightX}px` : "auto",
+        top: data.topY !== undefined ? `${data.topY}px` : "auto",
+        bottom: data.bottomY !== undefined ? `${data.bottomY}px` : "auto",
       }}
     >
       <Image

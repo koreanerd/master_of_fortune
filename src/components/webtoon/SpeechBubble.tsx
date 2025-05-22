@@ -7,8 +7,10 @@ export default function SpeechBubble({ data }: { data: SpeechBubbleData }) {
     <div
       className="absolute z-20 flex items-center justify-center text-center whitespace-pre-line text-[#424242]"
       style={{
-        left: `${data.x}px`,
-        bottom: `${data.y}px`,
+        left: data.leftX !== undefined ? `${data.leftX}px` : "auto",
+        right: data.rightX !== undefined ? `${data.rightX}px` : "auto",
+        top: data.topY !== undefined ? `${data.topY}px` : "auto",
+        bottom: data.bottomY !== undefined ? `${data.bottomY}px` : "auto",
         width: `${data.width}px`,
         height: `${data.height}px`,
         fontSize: `${data.fontSize}px`,

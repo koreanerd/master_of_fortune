@@ -31,7 +31,7 @@ function Webtoon() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-md mx-auto border-2 border-red-500">
+    <div className="relative flex flex-col items-center w-full max-w-md mx-auto">
       {cutData.map((cut, idx) => (
         <Cut key={idx} {...cut} />
       ))}

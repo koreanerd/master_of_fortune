@@ -6,8 +6,10 @@ export type SpeechBubbleData = {
   height: number;
   text: string;
   fontSize: number;
-  x: number;
-  y: number;
+  leftX?: number;
+  rightX?: number;
+  topY?: number;
+  bottomY?: number;
   marginTop?: number;
   marginBottom?: number;
 };
@@ -16,16 +18,16 @@ export type EffectTextData = {
   src: string;
   width: number;
   height: number;
-  x: number;
-  y: number;
+  leftX?: number;
+  rightX?: number;
+  topY?: number;
+  bottomY?: number;
 };
 
 export type HeaderData = {
   src: string;
   width: number;
   height: number;
-  x: number;
-  y: number;
   title: string;
   subtitle: string;
 };
