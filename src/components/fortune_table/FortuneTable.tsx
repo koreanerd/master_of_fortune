@@ -1,23 +1,34 @@
 import UserInfo from "./UserInfo";
 import userStore from "@/stores/userStore";
 import Table from "./Table";
+import Image from "next/image";
 
 export default function FortuneTable() {
   const userFortuneData = userStore.userFortuneData;
 
   return (
-    <div className="absolute bottom-[80px] w-[350px] h-[620px] bg-[url(/webtoon/episode/fortune_table_bg.svg)] bg-cover bg-no-repeat bg-center">
-      <div className="flex flex-col items-center justify-center gap-[25px]">
-        {userFortuneData && (
-          <>
-            <UserInfo
-              userName={userFortuneData?.name}
-              birthInfo={userFortuneData?.birthInfo}
-            />
+    <div className="absolute bottom-[80px] w-full h-fit p-[10px]">
+      <div className="relative">
+        <Image
+          src={"/webtoon/episode/fortune_table_bg.svg"}
+          alt={""}
+          width={351}
+          height={612}
+          className="w-full"
+        />
 
-            <Table rowData={userFortuneData?.rows} />
-          </>
-        )}
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-[25px]">
+          {userFortuneData && (
+            <>
+              <UserInfo
+                userName={userFortuneData?.name}
+                birthInfo={userFortuneData?.birthInfo}
+              />
+
+              <Table rowData={userFortuneData?.rows} />
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
